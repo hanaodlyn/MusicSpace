@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MusicSpace</title>
+  <link rel="website icon" type="png" href="MusicSpace logo.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/b9cba678d1.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <aside class="sidebar">
+            <div class="logo">
+                <img src="MusicSpace logo.png" alt="" style="width: 150px; height: auto;">
+            </div>
+            <div class="menu">
+                <h5>Menu</h5>
+                <ul>
+                    <li>
+                        <i class="sbexplore"></i>
+                        <a href="index.html">Explore</a>
+                    </li>
+                    <li>
+                        <i class="sbgenres"></i>
+                        <a href="genres.html">Genres</a>
+                    </li>
+                    <li>
+                        <i class="sbalbums"></i>
+                        <a href="albums.html">Albums</a>
+                    </li>
+                    <li>
+                        <i class="sbartists"></i>
+                        <a href="artis.html">Artists</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="menu">
+                <h5>Library</h5>
+                <ul>
+                    <li>
+                        <i class="sbcreateplaylist"></i>
+                        <a href="playlist.html">My Playlist</a>
+                    </li>
+                    <li>
+                        <i class="sbrecent"></i>
+                        <a href="recent.html">Recent</a>
+                    </li>
+                    <li>
+                        <i class="sbfavourites"></i>
+                        <a href="favourites.html">Favourites</a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="logout-section">
+              <a href="#" class="logout">LOG OUT</a>
+            </div>
+        </aside>
+   <header class="header">
+    <div class="header-content">
+      <!-- Ikon Home -->
+      <div class="icon home">
+        <img src="home-alt-regular-24.png" alt="">
+      </div>
+      <!-- Kotak Pencarian -->
+      <div class="search-bar">
+        <label for="search-bar"></label>
+        <input type="text" id="search-bar" placeholder="what do you want to play?">
+      </div>
+      
+      <!-- Ikon Profil -->
+      <div class="center">
+        <button id="show-login">LOGIN</button>
+      </div>
+
+      <div class="popup" id="login-popup">
+        <div class="close-btn" id="close-login">&times;</div>
+        <div class="form">
+          <h2>Log In</h2>
+          <div class="form-element">
+            <label for="email">Email</label>
+            <input type="text" id="email" placeholder="Enter email">
+          </div>
+          <div class="form-element">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter password">
+          </div>
+          <div class="form-element">
+            <a href="">Forgot password</a>
+          </div>
+          <div class="form-element">
+            <input type="checkbox" id="remember-me">
+            <label for="remember-me">remember me</label>
+          </div>
+          <div class="form-element">
+            <button onclick="validateLogin()">Sign In</button>
+        </div>
+        <div class="reg">
+        <a href="#" id="show-register">I don't have an account</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pop-up untuk pendaftaran -->
+  <div class="popup" id="register-popup">
+    <div class="close-btn" id="close-register">&times;</div>
+    <div class="form">
+      <h2>Create Account</h2>
+      <div class="form-element">
+        <label for="reg-email">Email</label>
+        <input type="text" id="reg-email" placeholder="Enter email">
+      </div>
+      <div class="form-element">
+        <label for="reg-password">Password</label>
+        <input type="password" id="re-password" placeholder="Enter password">
+      </div>
+      <div class="form-element">
+        <label for="confirm-password">Confirm Password</label>
+        <input type="password" id="confirm-password" placeholder="Confirm password">
+      </div>
+      <div class="form-element">
+        <input type="checkbox" id="remember-me">
+        <label for="remember-me">privacy-policy</label>
+      </div>
+      <div class="form-element">
+      <div class="form-element">
+        <button onclick="validateRegistration()">Register</button>
+      </div>
+    </div>
+  </div>
+  </header>
+
+<!-- iklan(?) -->
+<div  class="main">
+<div class="trending">
+  <div class="left">
+    <h5>Trending New Song</h5>
+    <div class="info">
+      <h2>Coincidence</h2>
+      <h4>Sabrina Carpenter</h4>
+      <h5>63 Million Plays</h5>
+      <div class="buttons">
+        <button>Listen Now</button>
+        <i class="bx bxs-heart"></i>
+      </div>
+    </div>
+  </div>
+  <img src="iklan.png" alt="">
+</div> 
+
+<!-- player -->
+<div class="container2">
+        <div  class="music_player">
+        <nav>
+            <div class="circle">
+                <i class="fa-solid fa-heart"></i>
+            </div>
+            <div class="circle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </nav>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkZ76tQOAWiYbr4cKw67fuXkqsToE6-4sETQ&s" class="songp">
+        <h1>Coincidence</h1>
+        <p>Sabrina Carpenter</p>
+
+        <audio id="songp">
+            <source src="Sabrina Carpenter - Coincidence (Official Lyric Video).mp3" type="audio/mpeg">
+        </audio>
+        <input type="range" value="0" id="progress">
+
+        <div class="controls">
+            <div><i class="fa-solid fa-backward"></i></div>
+            <div onclick="playPause()"><i class="fa-solid fa-play" id="ctrlIcon"></i></div>
+            <div><i class="fa-solid fa-forward"></i></div>
+        </div>
+
+        </div>
+    </div>
+
+<!-- song -->
+ <div class="songs">
+  <h2>Top Songs</h2>
+  <div class="list">
+    <div class="item">
+      <img src="song1.jpg">
+      <div class="play">
+        <span class="fa_play">
+          <div class="buttonl"><i class="fa-solid fa-play"></i></div>
+        </span>
+      </div>
+      <h4>BIRDS OF A FEATHER</h4>
+      <p>Bilie Eilish</p>
+    </div>
+
+    <div class="item">
+      <img src="https://i.scdn.co/image/ab67616d0000b27388e3822cccfb8f2832c70c2e">
+      <div class="play">
+        <span class="fa_play">
+          <div class="buttonl"><i class="fa-solid fa-play"></i></div>
+        </span>
+      </div>
+      <h4>365</h4>
+      <p>Charli XCX</p>
+    </div>
+
+    <div class="item">
+      <img src="https://upload.wikimedia.org/wikipedia/en/7/7e/Ariana_Grande_-_Eternal_Sunshine.png">
+      <div class="play">
+        <span class="fa_play">
+          <div class="buttonl"><i class="fa-solid fa-play"></i></div>
+        </span>
+      </div>
+      <h4>intro (end of the world)</h4>
+      <p>Ariana Grande</p>
+    </div>
+    
+
+    <div class="item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkZ76tQOAWiYbr4cKw67fuXkqsToE6-4sETQ&s">
+      <div class="play">
+        <span class="fa_play">
+          <div class="buttonl"><i class="fa-solid fa-play"></i></div>
+        </span>
+      </div>
+      <h4>Please Please Please</h4>
+      <p>Sabrina Carpenter</p>
+    </div>
+  </div>
+  <p class="view">show all</p>
+
+  <h2>Top Artists</h2>
+  <div class="list">
+    <div class="item2">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK7Vu4wU2WuYTGc-teI895fue1zBDvSL8z3Q&s">
+      <div class="play">
+        <span class="fa_play">
+          <div class="buttonl"><i class="fa-solid fa-play"></i></div>
+        </span>
+      </div>
+      <h4>Taylor Swift</h4>
+    </div>
+
+    <div class="item2">
+      <img src="https://lh3.googleusercontent.com/u5G4lXyNl69C1M298f2yMu610s5oSW98TAAVkze5Gek8B5qMDeJ2dFko0x3cXOaoJVA1339aOaOq3uTM=w544-h544-p-l90-rj">
+      <div class="play">
+        <span class="fa_play">
+          <div class="buttonl"><i class="fa-solid fa-play"></i></div>
+        </span>
+      </div>
+      <h4>Bruno Mars</h4>
+    </div>
+
+    <div class="item2">
+      <img src="https://i.scdn.co/image/ab67616100005174e03a98785f3658f0b6461ec4">
+      <div class="play">
+        <span class="fa_play">
+          <div class="buttonl"><i class="fa-solid fa-play"></i></div>
+        </span>
+      </div>
+      <h4>Olivia Rodrigo</h4>
+    </div>
+
+    <div class="item2">
+      <img src="https://www.rexorangecounty.com/assets/img/albums/pony.jpg">
+      <div class="play">
+        <span class="fa_play">
+          <div class="buttonl"><i class="fa-solid fa-play"></i></div>
+        </span>
+      </div>
+      <h4>Rex Orange County</h4>
+    </div>
+  </div>
+  <p class="view">show all</p>
+
+  <h2>Top Albums</h2>
+  <div class="list">
+    <div class="item">
+      <img src="https://www.brunomars.com/sites/g/files/g2000013556/files/2024-08/Vz9CX1LxyQ5c.jpg">
+      <div class="play">
+        <span class="fa_play">
+          <div class="buttonl"><i class="fa-solid fa-play"></i></div>
+        </span>
+      </div>
+      <h4>Die With A Smile</h4>
+      <p>Bruno Mars, Lady Gaga</p>
+    </div>
+
+    <div class="item">
+      <img src="https://upload.wikimedia.org/wikipedia/en/d/dc/Clairo_-_Charm.png">
+      <div class="play">
+        <span class="fa_play">
+          <div class="buttonl"><i class="fa-solid fa-play"></i></div>
+        </span>
+      </div>
+      <h4>Charm</h4>
+      <p>Clairo</p>
+    </div>
+
+    <div class="item">
+      <img src="song1.jpg">
+      <div class="play">
+        <span class="fa_play">
+          <div class="buttonl"><i class="fa-solid fa-play"></i></div>
+        </span>
+      </div>
+      <h4>Hit Me Hard and Soft</h4>
+      <p>Bilie Eilish</p>
+    </div>
+
+    <div class="item">
+      <img src="https://i.scdn.co/image/ab67616d00001e02485623bc41b6760fc1bca2f4">
+      <div class="play">
+        <span class="fa_play">
+          <div class="buttonl"><i class="fa-solid fa-play"></i></div>
+        </span>
+      </div>
+      <h4>CRAZY</h4>
+      <p>LE SSERAFIM</p>
+    </div>
+  </div>
+  <p class="view">show all</p>
+
+ </div>
+
+ <script>
+
+        let progress = document.getElementById("progress");
+        let songp = document.getElementById("songp");
+        let ctrlIcon = document.getElementById("ctrlIcon");
+
+        songp.onloadedmetadata = function(){
+            progress.max = songp.duration;
+            progress.value = songp.currentTime;
+        }
+
+        function playPause(){
+            if(ctrlIcon.classList.contains("fa-pause")){
+                songp.pause();
+                ctrlIcon.classList.remove("fa-pause");
+                ctrlIcon.classList.add("fa-play");
+            }
+            else{
+                songp.play();
+                ctrlIcon.classList.add("fa-pause");
+                ctrlIcon.classList.remove("fa-play");
+            }
+        }
+
+        if(songp.play()){
+             setInterval(()=>{
+                progress.value = songp.currentTime;
+            },500);
+        }
+
+        progress.onchange = function(){
+            songp.play();
+            songp.currentTime = progress.value;
+            ctrlIcon.classList.add("fa-pause");
+            ctrlIcon.classList.remove("fa-play");
+        }
+
+    </script>
+
+ <script src="main.js"></script>
+</body>
+</html>

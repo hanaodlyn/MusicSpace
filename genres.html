@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MusicSpace</title>
+  <link rel="website icon" type="png" href="MusicSpace logo.png">
+  <link rel="stylesheet" href="genres.css">
+  <script src="https://kit.fontawesome.com/b9cba678d1.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <aside class="sidebar">
+            <div class="logo">
+                <img src="MusicSpace logo.png" alt="" style="width: 150px; height: auto;">
+            </div>
+            <div class="menu">
+                <h5>Menu</h5>
+                <ul>
+                    <li>
+                        <i class="sbexplore"></i>
+                        <a href="index.html">Explore</a>
+                    </li>
+                    <li>
+                        <i class="sbgenres"></i>
+                        <a href="#">Genres</a>
+                    </li>
+                    <li>
+                        <i class="sbalbums"></i>
+                        <a href="albums.html">Albums</a>
+                    </li>
+                    <li>
+                        <i class="sbartists"></i>
+                        <a href="artis.html">Artists</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="menu">
+                <h5>Library</h5>
+                <ul>
+                    <li>
+                        <i class="sbcreateplaylist"></i>
+                        <a href="playlist.html">My Playlist</a>
+                    </li>
+                    <li>
+                        <i class="sbrecent"></i>
+                        <a href="recent.html">Recent</a>
+                    </li>
+                    <li>
+                        <i class="sbfavourites"></i>
+                        <a href="favourites.html">Favourites</a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="logout-section">
+              <a href="#" class="logout">LOG OUT</a>
+            </div>
+        </aside>
+   <header class="header">
+    <div class="header-content">
+      <!-- Ikon Home -->
+      <div class="icon home">
+        <img src="home-alt-regular-24.png" alt="">
+      </div>
+      <!-- Kotak Pencarian -->
+      <div class="search-bar">
+        <input type="text" placeholder="what do you want to play?">
+      </div>
+      
+      <!-- Ikon Profil -->
+      <div class="center">
+        <button id="show-login">LOGIN</button>
+      </div>
+
+      <div class="popup" id="login-popup">
+        <div class="close-btn" id="close-login">&times;</div>
+        <div class="form">
+          <h2>Log In</h2>
+          <div class="form-element">
+            <label for="email">Email</label>
+            <input type="text" id="email" placeholder="Enter email">
+          </div>
+          <div class="form-element">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter password">
+          </div>
+          <div class="form-element">
+            <a href="">Forgot password</a>
+          </div>
+          <div class="form-element">
+            <input type="checkbox" id="remember-me">
+            <label for="remember-me">remember me</label>
+          </div>
+          <div class="form-element">
+            <button onclick="validateLogin()">Sign In</button>
+        </div>
+        <div class="reg">
+        <a href="#" id="show-register">I don't have an account</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pop-up untuk pendaftaran -->
+  <div class="popup" id="register-popup">
+    <div class="close-btn" id="close-register">&times;</div>
+    <div class="form">
+      <h2>Create Account</h2>
+      <div class="form-element">
+        <label for="reg-email">Email</label>
+        <input type="text" id="reg-email" placeholder="Enter email">
+      </div>
+      <div class="form-element">
+        <label for="reg-password">Password</label>
+        <input type="password" id="re-password" placeholder="Enter password">
+      </div>
+      <div class="form-element">
+        <label for="confirm-password">Confirm Password</label>
+        <input type="password" id="confirm-password" placeholder="Confirm password">
+      </div>
+      <div class="form-element">
+        <input type="checkbox" id="remember-me">
+        <label for="remember-me">privacy-policy</label>
+      </div>
+      <div class="form-element">
+      <div class="form-element">
+        <button onclick="validateRegistration()">Register</button>
+      </div>
+    </div>
+  </div>
+  </header>
+
+<!-- iklan(?) -->
+<div  class="main">
+<div class="trending">
+  <div class="left">
+    <h5>Trending New Song</h5>
+    <div class="info">
+      <h2>Coincidence</h2>
+      <h4>Sabrina Carpenter</h4>
+      <h5>63 Million Plays</h5>
+      <div class="buttons">
+        <button>Listen Now</button>
+        <i class="bx bxs-heart"></i>
+      </div>
+    </div>
+  </div>
+  <img src="iklan.png" alt="">
+</div> 
+
+<!-- player -->
+<div class="container2">
+        <div  class="music_player">
+        <nav>
+            <div class="circle">
+                <i class="fa-solid fa-heart"></i>
+            </div>
+            <div class="circle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </nav>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkZ76tQOAWiYbr4cKw67fuXkqsToE6-4sETQ&s" class="songp">
+        <h1>Coincidence</h1>
+        <p>Sabrina Carpenter</p>
+
+        <audio id="songp">
+            <source src="Sabrina Carpenter - Coincidence (Official Lyric Video).mp3" type="audio/mpeg">
+        </audio>
+        <input type="range" value="0" id="progress">
+
+        <div class="controls">
+            <div><i class="fa-solid fa-backward"></i></div>
+            <div onclick="playPause()"><i class="fa-solid fa-play" id="ctrlIcon"></i></div>
+            <div><i class="fa-solid fa-forward"></i></div>
+        </div>
+
+        </div>
+    </div>
+
+<!-- song -->
+ <div class="songs">
+  <h2>Browse All</h2>
+  <div class="list">
+    <div class="item">
+      <div class="play">
+      </div>
+      <h4>Pop</h4>
+    </div>
+
+    <div class="item" id="c1">
+      <div class="play">
+        </span>
+      </div>
+      <h4>Rock</h4>
+    </div>
+
+    <div class="item" id="c2">
+      <div class="play">
+        </span>
+      </div>
+      <h4>Indie</h4>
+    </div>
+
+    <div class="item" id="c3">
+      <div class="play">
+        </span>
+      </div>
+      <h4>Jazz</h4>
+    </div>
+
+    <div class="item" id="c4">
+      <div class="play">
+        </span>
+      </div>
+      <h4>KPOP</h4>
+    </div>
+
+    <div class="item" id="c5">
+      <div class="play">
+        </span>
+      </div>
+      <h4>R&B</h4>
+    </div>
+
+ <script>
+
+        let progress = document.getElementById("progress");
+        let songp = document.getElementById("songp");
+        let ctrlIcon = document.getElementById("ctrlIcon");
+
+        songp.onloadedmetadata = function(){
+            progress.max = songp.duration;
+            progress.value = songp.currentTime;
+        }
+
+        function playPause(){
+            if(ctrlIcon.classList.contains("fa-pause")){
+                songp.pause();
+                ctrlIcon.classList.remove("fa-pause");
+                ctrlIcon.classList.add("fa-play");
+            }
+            else{
+                songp.play();
+                ctrlIcon.classList.add("fa-pause");
+                ctrlIcon.classList.remove("fa-play");
+            }
+        }
+
+        if(songp.play()){
+             setInterval(()=>{
+                progress.value = songp.currentTime;
+            },500);
+        }
+
+        progress.onchange = function(){
+            songp.play();
+            songp.currentTime = progress.value;
+            ctrlIcon.classList.add("fa-pause");
+            ctrlIcon.classList.remove("fa-play");
+        }
+
+    </script>
+
+ <script src="main.js"></script>
+</body>
+</html>
